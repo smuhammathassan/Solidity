@@ -1,0 +1,23 @@
+//SPDX-License-Identifier: MIT
+pragma solidity ^0.6.0;
+
+contract storeValue{
+    string name;
+    uint age;
+    
+    struct Person{
+    string name;
+    uint age;
+    }
+    
+    Person[] person;
+    
+    mapping(string => uint) public personToAgeFinder;
+    
+    function addPerson(string memory _name, uint _age) public{
+        person.push(Person(_name, _age));
+        personToAgeFinder[_name] = _age;
+        
+    }
+    
+}
